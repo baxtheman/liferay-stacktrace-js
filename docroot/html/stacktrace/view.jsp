@@ -15,6 +15,7 @@ window.onerror = function(errorMessage, errorUrl, errorLine) {
 	{
 		method: 'POST',
 		data : {
+			<portlet:namespace/>userAgent : navigator.userAgent,
 			<portlet:namespace/>location : window.location.href,
 			<portlet:namespace/>msg : errorMessage,
 			<portlet:namespace/>url : errorUrl,

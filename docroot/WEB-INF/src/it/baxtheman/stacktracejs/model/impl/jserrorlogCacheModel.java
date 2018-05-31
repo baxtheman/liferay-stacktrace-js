@@ -38,7 +38,7 @@ public class jserrorlogCacheModel implements CacheModel<jserrorlog>,
 	Externalizable {
 	@Override
 	public String toString() {
-		StringBundler sb = new StringBundler(21);
+		StringBundler sb = new StringBundler(23);
 
 		sb.append("{jserrorlogId=");
 		sb.append(jserrorlogId);
@@ -52,6 +52,8 @@ public class jserrorlogCacheModel implements CacheModel<jserrorlog>,
 		sb.append(userName);
 		sb.append(", createDate=");
 		sb.append(createDate);
+		sb.append(", userAgent=");
+		sb.append(userAgent);
 		sb.append(", location=");
 		sb.append(location);
 		sb.append(", msg=");
@@ -86,6 +88,13 @@ public class jserrorlogCacheModel implements CacheModel<jserrorlog>,
 		}
 		else {
 			jserrorlogImpl.setCreateDate(new Date(createDate));
+		}
+
+		if (userAgent == null) {
+			jserrorlogImpl.setUserAgent(StringPool.BLANK);
+		}
+		else {
+			jserrorlogImpl.setUserAgent(userAgent);
 		}
 
 		if (location == null) {
@@ -129,6 +138,7 @@ public class jserrorlogCacheModel implements CacheModel<jserrorlog>,
 		userId = objectInput.readLong();
 		userName = objectInput.readUTF();
 		createDate = objectInput.readLong();
+		userAgent = objectInput.readUTF();
 		location = objectInput.readUTF();
 		msg = objectInput.readUTF();
 		url = objectInput.readUTF();
@@ -151,6 +161,13 @@ public class jserrorlogCacheModel implements CacheModel<jserrorlog>,
 		}
 
 		objectOutput.writeLong(createDate);
+
+		if (userAgent == null) {
+			objectOutput.writeUTF(StringPool.BLANK);
+		}
+		else {
+			objectOutput.writeUTF(userAgent);
+		}
 
 		if (location == null) {
 			objectOutput.writeUTF(StringPool.BLANK);
@@ -187,6 +204,7 @@ public class jserrorlogCacheModel implements CacheModel<jserrorlog>,
 	public long userId;
 	public String userName;
 	public long createDate;
+	public String userAgent;
 	public String location;
 	public String msg;
 	public String url;

@@ -23,6 +23,7 @@
 
 		<!-- Other fields -->
 
+		<column name="userAgent" type="String" />
 		<column name="location" type="String" />
 		<column name="msg" type="String" />
 		<column name="url" type="String" />

@@ -82,6 +82,7 @@ public class jserrorlogClp extends BaseModelImpl<jserrorlog>
 		attributes.put("userId", getUserId());
 		attributes.put("userName", getUserName());
 		attributes.put("createDate", getCreateDate());
+		attributes.put("userAgent", getUserAgent());
 		attributes.put("location", getLocation());
 		attributes.put("msg", getMsg());
 		attributes.put("url", getUrl());
@@ -126,6 +127,12 @@ public class jserrorlogClp extends BaseModelImpl<jserrorlog>
 
 		if (createDate != null) {
 			setCreateDate(createDate);
+		}
+
+		String userAgent = (String)attributes.get("userAgent");
+
+		if (userAgent != null) {
+			setUserAgent(userAgent);
 		}
 
 		String location = (String)attributes.get("location");
@@ -302,6 +309,29 @@ public class jserrorlogClp extends BaseModelImpl<jserrorlog>
 	}
 
 	@Override
+	public String getUserAgent() {
+		return _userAgent;
+	}
+
+	@Override
+	public void setUserAgent(String userAgent) {
+		_userAgent = userAgent;
+
+		if (_jserrorlogRemoteModel != null) {
+			try {
+				Class<?> clazz = _jserrorlogRemoteModel.getClass();
+
+				Method method = clazz.getMethod("setUserAgent", String.class);
+
+				method.invoke(_jserrorlogRemoteModel, userAgent);
+			}
+			catch (Exception e) {
+				throw new UnsupportedOperationException(e);
+			}
+		}
+	}
+
+	@Override
 	public String getLocation() {
 		return _location;
 	}
@@ -468,6 +498,7 @@ public class jserrorlogClp extends BaseModelImpl<jserrorlog>
 		clone.setUserId(getUserId());
 		clone.setUserName(getUserName());
 		clone.setCreateDate(getCreateDate());
+		clone.setUserAgent(getUserAgent());
 		clone.setLocation(getLocation());
 		clone.setMsg(getMsg());
 		clone.setUrl(getUrl());
@@ -522,7 +553,7 @@ public class jserrorlogClp extends BaseModelImpl<jserrorlog>
 
 	@Override
 	public String toString() {
-		StringBundler sb = new StringBundler(21);
+		StringBundler sb = new StringBundler(23);
 
 		sb.append("{jserrorlogId=");
 		sb.append(getJserrorlogId());
@@ -536,6 +567,8 @@ public class jserrorlogClp extends BaseModelImpl<jserrorlog>
 		sb.append(getUserName());
 		sb.append(", createDate=");
 		sb.append(getCreateDate());
+		sb.append(", userAgent=");
+		sb.append(getUserAgent());
 		sb.append(", location=");
 		sb.append(getLocation());
 		sb.append(", msg=");
@@ -551,7 +584,7 @@ public class jserrorlogClp extends BaseModelImpl<jserrorlog>
 
 	@Override
 	public String toXmlString() {
-		StringBundler sb = new StringBundler(34);
+		StringBundler sb = new StringBundler(37);
 
 		sb.append("<model><model-name>");
 		sb.append("it.baxtheman.stacktracejs.model.jserrorlog");
@@ -582,6 +615,10 @@ public class jserrorlogClp extends BaseModelImpl<jserrorlog>
 		sb.append(getCreateDate());
 		sb.append("]]></column-value></column>");
 		sb.append(
+			"<column><column-name>userAgent</column-name><column-value><![CDATA[");
+		sb.append(getUserAgent());
+		sb.append("]]></column-value></column>");
+		sb.append(
 			"<column><column-name>location</column-name><column-value><![CDATA[");
 		sb.append(getLocation());
 		sb.append("]]></column-value></column>");
@@ -610,6 +647,7 @@ public class jserrorlogClp extends BaseModelImpl<jserrorlog>
 	private String _userUuid;
 	private String _userName;
 	private Date _createDate;
+	private String _userAgent;
 	private String _location;
 	private String _msg;
 	private String _url;

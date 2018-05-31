@@ -119,7 +119,7 @@ public class jserrorlogLocalServiceClp implements jserrorlogLocalService {
 
 		_methodParameterTypes19 = new String[] {
 				"long", "long", "java.lang.String", "java.lang.String",
-				"java.lang.String", "java.lang.String"
+				"java.lang.String", "java.lang.String", "java.lang.String"
 			};
 	}
 
@@ -675,8 +675,9 @@ public class jserrorlogLocalServiceClp implements jserrorlogLocalService {
 
 	@Override
 	public it.baxtheman.stacktracejs.model.jserrorlog addjserrorlog(
-		long userId, long groupId, java.lang.String location,
-		java.lang.String msg, java.lang.String url, java.lang.String line)
+		long userId, long groupId, java.lang.String userAgent,
+		java.lang.String location, java.lang.String msg, java.lang.String url,
+		java.lang.String line)
 		throws com.liferay.portal.kernel.exception.PortalException,
 			com.liferay.portal.kernel.exception.SystemException {
 		Object returnObj = null;
@@ -688,6 +689,8 @@ public class jserrorlogLocalServiceClp implements jserrorlogLocalService {
 						userId,
 						
 					groupId,
+						
+					ClpSerializer.translateInput(userAgent),
 						
 					ClpSerializer.translateInput(location),
 						

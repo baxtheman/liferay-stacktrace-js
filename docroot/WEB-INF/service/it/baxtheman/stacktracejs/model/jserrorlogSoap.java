@@ -37,6 +37,7 @@ public class jserrorlogSoap implements Serializable {
 		soapModel.setUserId(model.getUserId());
 		soapModel.setUserName(model.getUserName());
 		soapModel.setCreateDate(model.getCreateDate());
+		soapModel.setUserAgent(model.getUserAgent());
 		soapModel.setLocation(model.getLocation());
 		soapModel.setMsg(model.getMsg());
 		soapModel.setUrl(model.getUrl());
@@ -141,6 +142,14 @@ public class jserrorlogSoap implements Serializable {
 		_createDate = createDate;
 	}
 
+	public String getUserAgent() {
+		return _userAgent;
+	}
+
+	public void setUserAgent(String userAgent) {
+		_userAgent = userAgent;
+	}
+
 	public String getLocation() {
 		return _location;
 	}
@@ -179,6 +188,7 @@ public class jserrorlogSoap implements Serializable {
 	private long _userId;
 	private String _userName;
 	private Date _createDate;
+	private String _userAgent;
 	private String _location;
 	private String _msg;
 	private String _url;

@@ -276,12 +276,14 @@ public class jserrorlogLocalServiceUtil {
 	}
 
 	public static it.baxtheman.stacktracejs.model.jserrorlog addjserrorlog(
-		long userId, long groupId, java.lang.String location,
-		java.lang.String msg, java.lang.String url, java.lang.String line)
+		long userId, long groupId, java.lang.String userAgent,
+		java.lang.String location, java.lang.String msg, java.lang.String url,
+		java.lang.String line)
 		throws com.liferay.portal.kernel.exception.PortalException,
 			com.liferay.portal.kernel.exception.SystemException {
 		return getService()
-				   .addjserrorlog(userId, groupId, location, msg, url, line);
+				   .addjserrorlog(userId, groupId, userAgent, location, msg,
+			url, line);
 	}
 
 	public static void clearService() {

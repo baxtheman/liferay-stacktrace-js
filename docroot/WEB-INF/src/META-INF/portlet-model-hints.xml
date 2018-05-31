@@ -8,6 +8,9 @@
 		<field name="userId" type="long" />
 		<field name="userName" type="String" />
 		<field name="createDate" type="Date" />
+		<field name="userAgent" type="String">
+			<hint name="max-length">150</hint>
+		</field>
 		<field name="location" type="String">
 			<hint name="max-length">2000</hint>
 		</field>

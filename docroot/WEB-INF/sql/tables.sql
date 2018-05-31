@@ -18,6 +18,7 @@ create table stacktracejs_jserrorlog (
 	userId LONG,
 	userName VARCHAR(75) null,
 	createDate DATE null,
+	userAgent VARCHAR(150) null,
 	location VARCHAR(2000) null,
 	msg VARCHAR(2000) null,
 	url VARCHAR(2000) null,

@@ -161,6 +161,21 @@ public interface jserrorlogModel extends BaseModel<jserrorlog> {
 	public void setCreateDate(Date createDate);
 
 	/**
+	 * Returns the user agent of this jserrorlog.
+	 *
+	 * @return the user agent of this jserrorlog
+	 */
+	@AutoEscape
+	public String getUserAgent();
+
+	/**
+	 * Sets the user agent of this jserrorlog.
+	 *
+	 * @param userAgent the user agent of this jserrorlog
+	 */
+	public void setUserAgent(String userAgent);
+
+	/**
 	 * Returns the location of this jserrorlog.
 	 *
 	 * @return the location of this jserrorlog

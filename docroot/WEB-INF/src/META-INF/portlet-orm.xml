@@ -17,6 +17,7 @@
 			<basic name="createDate">
 				<temporal>TIMESTAMP</temporal>
 			</basic>
+			<basic name="userAgent" />
 			<basic name="location" />
 			<basic name="msg" />
 			<basic name="url" />

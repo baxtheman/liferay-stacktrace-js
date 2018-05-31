@@ -46,8 +46,8 @@ public class jserrorlogLocalServiceImpl extends jserrorlogLocalServiceBaseImpl {
 		LogFactoryUtil.getLog(jserrorlogLocalServiceImpl.class);
 
 	public jserrorlog addjserrorlog(
-		long userId, long groupId, String location, String msg, String url,
-		String line)
+		long userId, long groupId, String userAgent, String location,
+		String msg, String url, String line)
 		throws SystemException, PortalException {
 
 		jserrorlog entry = jserrorlogPersistence.create(
@@ -63,6 +63,7 @@ public class jserrorlogLocalServiceImpl extends jserrorlogLocalServiceBaseImpl {
 		entry.setCompanyId(group.getCompanyId());
 		entry.setCreateDate(new Date());
 
+		entry.setUserAgent(userAgent);
 		entry.setLocation(location);
 		entry.setMsg(msg);
 		entry.setUrl(url);

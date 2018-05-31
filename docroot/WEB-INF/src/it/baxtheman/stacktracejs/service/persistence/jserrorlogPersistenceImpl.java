@@ -836,6 +836,7 @@ public class jserrorlogPersistenceImpl extends BasePersistenceImpl<jserrorlog>
 		jserrorlogImpl.setUserId(jserrorlog.getUserId());
 		jserrorlogImpl.setUserName(jserrorlog.getUserName());
 		jserrorlogImpl.setCreateDate(jserrorlog.getCreateDate());
+		jserrorlogImpl.setUserAgent(jserrorlog.getUserAgent());
 		jserrorlogImpl.setLocation(jserrorlog.getLocation());
 		jserrorlogImpl.setMsg(jserrorlog.getMsg());
 		jserrorlogImpl.setUrl(jserrorlog.getUrl());

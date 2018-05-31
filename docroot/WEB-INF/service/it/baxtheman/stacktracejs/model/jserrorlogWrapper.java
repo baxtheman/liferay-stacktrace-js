@@ -55,6 +55,7 @@ public class jserrorlogWrapper implements jserrorlog, ModelWrapper<jserrorlog> {
 		attributes.put("userId", getUserId());
 		attributes.put("userName", getUserName());
 		attributes.put("createDate", getCreateDate());
+		attributes.put("userAgent", getUserAgent());
 		attributes.put("location", getLocation());
 		attributes.put("msg", getMsg());
 		attributes.put("url", getUrl());
@@ -99,6 +100,12 @@ public class jserrorlogWrapper implements jserrorlog, ModelWrapper<jserrorlog> {
 
 		if (createDate != null) {
 			setCreateDate(createDate);
+		}
+
+		String userAgent = (String)attributes.get("userAgent");
+
+		if (userAgent != null) {
+			setUserAgent(userAgent);
 		}
 
 		String location = (String)attributes.get("location");
@@ -286,6 +293,26 @@ public class jserrorlogWrapper implements jserrorlog, ModelWrapper<jserrorlog> {
 	@Override
 	public void setCreateDate(java.util.Date createDate) {
 		_jserrorlog.setCreateDate(createDate);
+	}
+
+	/**
+	* Returns the user agent of this jserrorlog.
+	*
+	* @return the user agent of this jserrorlog
+	*/
+	@Override
+	public java.lang.String getUserAgent() {
+		return _jserrorlog.getUserAgent();
+	}
+
+	/**
+	* Sets the user agent of this jserrorlog.
+	*
+	* @param userAgent the user agent of this jserrorlog
+	*/
+	@Override
+	public void setUserAgent(java.lang.String userAgent) {
+		_jserrorlog.setUserAgent(userAgent);
 	}
 
 	/**

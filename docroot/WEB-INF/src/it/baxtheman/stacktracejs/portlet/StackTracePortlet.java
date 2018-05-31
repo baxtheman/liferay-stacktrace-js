@@ -26,13 +26,14 @@ public class StackTracePortlet extends MVCPortlet {
 		ThemeDisplay themeDisplay =
 			(ThemeDisplay) actionRequest.getAttribute(WebKeys.THEME_DISPLAY);
 
+		String userAgent = ParamUtil.getString(actionRequest, "userAgent");
 		String location = ParamUtil.getString(actionRequest, "location");
 		String msg = ParamUtil.getString(actionRequest, "msg");
 		String url = ParamUtil.getString(actionRequest, "url");
 		String line = ParamUtil.getString(actionRequest, "line");
 
 		jserrorlogLocalServiceUtil.addjserrorlog(
-			themeDisplay.getUserId(), themeDisplay.getScopeGroupId(), location,
-			msg, url, line);
+			themeDisplay.getUserId(), themeDisplay.getScopeGroupId(), userAgent,
+			location, msg, url, line);
 	}
 }
