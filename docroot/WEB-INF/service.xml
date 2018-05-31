@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.2.0//EN" "http://www.liferay.com/dtd/liferay-service-builder_6_2_0.dtd">
+<service-builder package-path="it.baxtheman.stacktracejs">
+	<author>@baxtheman</author>
+	<namespace>stacktracejs</namespace>
+
+	<entity name="jserrorlog" local-service="true" remote-service="true">
+
+		<!-- PK fields -->
+
+		<column name="jserrorlogId" type="long" primary="true" />
+
+		<!-- Group instance -->
+
+		<column name="groupId" type="long" />
+
+		<!-- Audit fields -->
+
+		<column name="companyId" type="long" />
+		<column name="userId" type="long" />
+		<column name="userName" type="String" />
+		<column name="createDate" type="Date" />
+
+		<!-- Other fields -->
+
+		<column name="location" type="String" />
+		<column name="msg" type="String" />
+		<column name="url" type="String" />
+		<column name="line" type="String" />
+
+		<!-- Order -->
+
+		<order by="asc">
+			<order-column name="createDate" />
+		</order>
+
+		<!-- Finder methods -->
+
+		<finder name="groupId" return-type="Collection">
+			<finder-column name="groupId" />
+		</finder>
+	</entity>
+
+</service-builder>

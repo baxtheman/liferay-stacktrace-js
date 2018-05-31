@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" default-destroy-method="destroy" default-init-method="afterPropertiesSet" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean id="it.baxtheman.stacktracejs.service.jserrorlogLocalService" class="it.baxtheman.stacktracejs.service.impl.jserrorlogLocalServiceImpl" />
+	<bean id="it.baxtheman.stacktracejs.service.jserrorlogService" class="it.baxtheman.stacktracejs.service.impl.jserrorlogServiceImpl" />
+	<bean id="it.baxtheman.stacktracejs.service.persistence.jserrorlogPersistence" class="it.baxtheman.stacktracejs.service.persistence.jserrorlogPersistenceImpl" parent="basePersistence" />
+</beans>
