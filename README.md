@@ -20,3 +20,4 @@ Plugin catch it and save to a specific liferay table...
 
 - Notification system
 - Control panel portlet to view js errors logs.
+- Porting to Liferay 7
